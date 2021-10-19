@@ -1,7 +1,78 @@
 body {
     background-color: #fffbf7;
     margin: 0;
+    font-family: "open Sans", sans-serif;
 }
+
+/* Encabezado */
+
+.header {
+    height: 60px;
+    margin: 0 20px;
+    padding-bottom: 15px;
+    font-family: sans-serif;
+    font-size: 0;
+    line-height: 45px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fffbf7;
+}
+
+.header .menu-item {
+    display: inline;
+    margin: 0 8px;
+}
+
+.header > * {
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.header .logo {
+    width: 20%;
+    height: 40px;
+}
+
+.header .logo img {
+    height: 100%;
+}
+
+.header .mavbar {
+    width: 60%;
+    text-align: center;
+    color: #025157;
+}
+
+.header .navbar ul {
+padding: 0;
+}
+
+.header .actions {
+    width: 20%;
+    text-align: right;
+    font-size: 14px;
+}
+
+.header .actions > * {
+    margin: 0 10px;
+}
+
+.header .actions a {
+    color: #67b54b;
+}
+
+.header .actions button {
+    background-color: #67b54b;
+    color: white;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 5px;
+}
+
+/* Main */
 
 .main {
     margin-top: 140;
@@ -17,47 +88,207 @@ body {
 
 .main h4 {
     color: #46484c;
+    font-family: 'Slabo 27px', serif;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .texto-promocional {
-    color: #8b8b8bcc; 
+    margin-top: 15px;
+    color: #8b8b8bcc;
+    font-size: 16px;
+    font-family: 'Open Sans', serif;
+}
+
+.signup-form {
+    height: 55px;
 }
 
 .texto-boton {
+    font-size: 1rem;
+    height: 100%;
+    padding: 6px 20px;
+    margin-left: -10px;
     color: #fff;
     background-color: #025157;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+.input-main {
+    font-size: 1rem;
+    height: calc(100% - 14px);
+    border: 1px solid #b6b6b6;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     padding: 6px 20px;
-    margin-left: -10px;
+    max-width: 250px;
+}
+
+.main .banner {
+    margin-top: 32px;
+}
+
+.main .intro {
+    margin-top: 32px;
+}
+
+.main .intro img {
+    width: 70%;
+}
+
+.publish {
+    padding-left: 10px;
+}
+
+.publish h3 {
+    font-family: 'Alegreya', serif;
+    font-size: 40px;
+    line-height: 48px;
+    color: #025157;
+    font-weight: 900;
+
+}
+
+.publish > p {
+    font-size: 16px;
+    color: #343434;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.promo {
+    display: flex;
+    width: 70%;
+    margin: 100px auto;
+    align-items: center;
+}
+
+.promo .explanatory-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.promo .explanatory-video img {
+    width: 120px;
+    margin-top: 10px;
+}
+
+.features {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    height: 800px;
+    background-color: #025157;
+    padding: 5% 10%;
+}
+
+.features .feature-card {
+    background-color: #ffffff;
+    margin: 0 15px 30px;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-content figure {
+    margin-left: 0;
+}
+
+.features .feature-card .feature-content img {
+    width: 50px;
+}
+
+.feature-image {
+    flex: 1;
+    width: 40%;
+    height: 80%;
+    position: relative;
+    right: -50px;
+    transition: right 0.5s;
+}
+
+.feature-image:hover {
+    right: 0;
+}
+
+.feature-image figure {
+    height: 100%;
+    margin-top: 0;
+}
+
+.feature-image figure img {
+    height: 100%;
+    margin-top: 0;
+}
+
+/* Aqui empiezan los media queries */
+
+@media (max-width: 425px) {
+.actions,
+.navbar {
+    display: none;
 }
 
 .header {
-    margin: 40px 20px 0;
-    font-size: 0;
+    padding: 15px 15px 0;
+    z-index: 1;
+    margin: 0;
 }
 
-.header li {
-    display: inline;
+.main {
+    margin-top: 130px;
 }
 
-.header > * {
-    display: inline-block;
-    font-size: 16px;
+.main h1 {
+    font-size: 30px;
 }
 
-.header .logo {
-    width: 15%;
+.main .banner > img {
+    width: 100%;
 }
 
-.header .mavbar {
-    width: 70%;
-    text-align: center;
+.intro {
+    margin: 0;
 }
 
-.header .actions {
-    width: 15%;
-    text-align: right;
+.promo {
+    flex-direction: column;
+    max-width: 90%;
+    width: unset;
+}
+
+.explanatory-video > video {
+    width: 100%;
+}
+
+.publish {
+    margin-top: 10px;
+}
+
+.publish h3 {
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+.features {
+    grid-template: repeat(4, 1fr) / 1fr;
+    padding-left: 0;
+    padding-right: 0;
+    height: unset;
+}
+
+.feature-image {
+    display: none;
+}
 }
